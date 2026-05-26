@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:id="rootPane"
+           fx:controller="org.example.controllers.RegistroController"
+           prefHeight="720.0"
+           prefWidth="480.0"
+           styleClass="auth-root"
+           stylesheets="@/org/example/styles/login.css">
+
+    <VBox alignment="CENTER"
+          spacing="0"
+          StackPane.alignment="CENTER">
+
+        <VBox fx:id="authCard"
+              alignment="CENTER_LEFT"
+              spacing="12"
+              styleClass="auth-card">
+
+            <Label styleClass="auth-title" text="Crear cuenta"/>
+            <Label styleClass="auth-subtitle" text="Regístrate en OptiScan Pro"/>
+
+            <Label fx:id="messageLabel"
+                   managed="false"
+                   styleClass="auth-message"
+                   visible="false"
+                   wrapText="true"/>
+
+            <Label styleClass="auth-field-label" text="Nombre"/>
+            <TextField fx:id="nameField"
+                       promptText="Tu nombre"
+                       styleClass="auth-textfield"/>
+
+            <Label styleClass="auth-field-label" text="Correo"/>
+            <TextField fx:id="emailField"
+                       promptText="usuario@ejemplo.com"
+                       styleClass="auth-textfield"/>
+
+            <Label styleClass="auth-field-label" text="Contraseña"/>
+            <PasswordField fx:id="passwordField"
+                           promptText="••••••••"
+                           styleClass="auth-passwordfield"/>
+
+            <Label styleClass="auth-field-label" text="Confirmar contraseña"/>
+            <PasswordField fx:id="confirmPasswordField"
+                           promptText="••••••••"
+                           styleClass="auth-passwordfield"/>
+
+            <Button fx:id="registerButton"
+                    maxWidth="Infinity"
+                    mnemonicParsing="false"
+                    onAction="#handleRegister"
+                    styleClass="auth-primary-button"
+                    text="Crear cuenta"/>
+
+            <Button fx:id="backToLoginButton"
+                    maxWidth="Infinity"
+                    mnemonicParsing="false"
+                    onAction="#goBackToLogin"
+                    styleClass="auth-secondary-button"
+                    text="Volver al login"/>
+        </VBox>
+    </VBox>
+</StackPane>

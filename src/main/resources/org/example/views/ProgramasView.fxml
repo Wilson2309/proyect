@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.controllers.ProgramasController"
+      prefHeight="500.0"
+      prefWidth="700.0"
+      spacing="16"
+      styleClass="programas-root"
+      stylesheets="@/org/example/styles/programas.css">
+
+    <Label styleClass="programas-title" text="Gestión de Programas"/>
+    <Label styleClass="programas-subtitle"
+           text="Programas instalados detectados en Windows (registro del sistema)"/>
+
+    <HBox spacing="8" styleClass="programas-type-bar">
+        <ToggleButton fx:id="appsToggle"
+                      mnemonicParsing="false"
+                      selected="true"
+                      styleClass="programas-type-toggle"
+                      text="Aplicaciones"/>
+        <ToggleButton fx:id="systemToggle"
+                      mnemonicParsing="false"
+                      styleClass="programas-type-toggle"
+                      text="Controladores y Sistema"/>
+    </HBox>
+
+    <Label fx:id="resultCountLabel"
+           styleClass="programas-count"
+           text="0 aplicaciones"/>
+
+    <HBox alignment="CENTER_LEFT" spacing="12" styleClass="programas-toolbar">
+        <TextField fx:id="searchField"
+                   disable="true"
+                   promptText="Buscar por nombre, editor, versión..."
+                   styleClass="programas-search"
+                   HBox.hgrow="ALWAYS"/>
+        <Button fx:id="refreshButton"
+                mnemonicParsing="false"
+                onAction="#handleRefreshScan"
+                styleClass="programas-add-button"
+                text="Actualizar escaneo"/>
+    </HBox>
+
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <ProgressIndicator fx:id="loadingIndicator"
+                           managed="false"
+                           prefHeight="28"
+                           prefWidth="28"
+                           styleClass="programas-loading"
+                           visible="false"/>
+        <Label fx:id="statusLabel"
+               styleClass="programas-status"
+               text="Listo para escanear."/>
+    </HBox>
+
+    <Label fx:id="messageLabel"
+           managed="false"
+           visible="false"
+           wrapText="true"/>
+
+    <StackPane VBox.vgrow="ALWAYS">
+        <ScrollPane fitToWidth="true"
+                    fx:id="programsScroll"
+                    styleClass="programas-scroll">
+
+            <VBox fx:id="programsList"
+                  spacing="10"
+                  styleClass="programas-list">
+                <padding>
+                    <Insets bottom="8" right="4" top="4"/>
+                </padding>
+            </VBox>
+        </ScrollPane>
+    </StackPane>
+</VBox>

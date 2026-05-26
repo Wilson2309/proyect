@@ -1,0 +1,258 @@
+/* Gestión de Programas — OptiScan Pro */
+
+.programas-root {
+    -fx-background-color: transparent;
+    -fx-padding: 8 4 8 4;
+}
+
+.programas-title {
+    -fx-text-fill: #0f172a;
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+}
+
+.programas-subtitle {
+    -fx-text-fill: #64748b;
+    -fx-font-size: 13px;
+}
+
+.programas-type-bar {
+    -fx-spacing: 8;
+    -fx-alignment: center-left;
+}
+
+.programas-type-toggle {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #475569;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 8 16 8 16;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.programas-type-toggle:selected {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #1d4ed8;
+}
+
+.programas-type-toggle:hover {
+    -fx-border-color: #cbd5e1;
+}
+
+.programas-count {
+    -fx-text-fill: #334155;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.programas-toolbar {
+    -fx-spacing: 12;
+    -fx-alignment: center-left;
+}
+
+.programas-search {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 10 12 10 12;
+    -fx-font-size: 14px;
+}
+
+.programas-search:focused {
+    -fx-border-color: #3b82f6;
+}
+
+.programas-add-button {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8px;
+    -fx-padding: 10 16 10 16;
+    -fx-cursor: hand;
+}
+
+.programas-add-button:hover {
+    -fx-background-color: #1d4ed8;
+}
+
+.programas-form {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-padding: 16;
+    -fx-spacing: 10;
+}
+
+.programas-field-label {
+    -fx-text-fill: #334155;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.programas-field {
+    -fx-background-color: #f8fafc;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 8 10 8 10;
+}
+
+.programas-field-error {
+    -fx-border-color: #ef4444;
+    -fx-border-width: 2;
+}
+
+.programas-save-button {
+    -fx-background-color: #16a34a;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8px;
+    -fx-padding: 8 14 8 14;
+    -fx-cursor: hand;
+}
+
+.programas-cancel-button {
+    -fx-background-color: #e2e8f0;
+    -fx-text-fill: #334155;
+    -fx-background-radius: 8px;
+    -fx-padding: 8 14 8 14;
+    -fx-cursor: hand;
+}
+
+.programas-message-error {
+    -fx-text-fill: #b91c1c;
+    -fx-background-color: #fef2f2;
+    -fx-border-color: #fecaca;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 8 10 8 10;
+    -fx-font-size: 13px;
+}
+
+.programas-message-success {
+    -fx-text-fill: #15803d;
+    -fx-background-color: #f0fdf4;
+    -fx-border-color: #bbf7d0;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 8 10 8 10;
+    -fx-font-size: 13px;
+}
+
+.programas-scroll {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.programas-scroll .viewport {
+    -fx-background-color: transparent;
+}
+
+.programas-list {
+    -fx-spacing: 10;
+}
+
+.programa-card {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-padding: 14 16 14 16;
+    -fx-spacing: 12;
+    -fx-alignment: center-left;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.06), 8, 0, 0, 2);
+}
+
+.programa-card:hover {
+    -fx-border-color: #cbd5e1;
+}
+
+.programa-name {
+    -fx-text-fill: #0f172a;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.programa-desc {
+    -fx-text-fill: #64748b;
+    -fx-font-size: 13px;
+}
+
+.programa-meta {
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 12px;
+}
+
+.programa-badge {
+    -fx-background-color: #eff6ff;
+    -fx-text-fill: #1d4ed8;
+    -fx-border-color: #bfdbfe;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-padding: 6 12 6 12;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.programa-badge-app {
+    -fx-background-color: #eff6ff;
+    -fx-text-fill: #1d4ed8;
+    -fx-border-color: #bfdbfe;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-padding: 6 12 6 12;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.programa-badge-system {
+    -fx-background-color: #fff7ed;
+    -fx-text-fill: #c2410c;
+    -fx-border-color: #fed7aa;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-padding: 6 12 6 12;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.programas-loading {
+    -fx-progress-color: #2563eb;
+}
+
+.programas-status {
+    -fx-text-fill: #475569;
+    -fx-font-size: 13px;
+}
+
+.programa-edit-button {
+    -fx-background-color: #eff6ff;
+    -fx-text-fill: #1d4ed8;
+    -fx-border-color: #bfdbfe;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 6 12 6 12;
+    -fx-cursor: hand;
+}
+
+.programa-delete-button {
+    -fx-background-color: #fef2f2;
+    -fx-text-fill: #b91c1c;
+    -fx-border-color: #fecaca;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 6 12 6 12;
+    -fx-cursor: hand;
+}
+
+.programas-empty {
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 14px;
+    -fx-padding: 24;
+}

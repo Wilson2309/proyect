@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+
+<ScrollPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:id="rootPane"
+            fx:controller="org.example.controllers.LimpiezaController"
+            fitToWidth="true"
+            hbarPolicy="NEVER"
+            styleClass="clean-root"
+            stylesheets="@/org/example/styles/limpieza.css">
+
+    <VBox fx:id="contentRoot" spacing="22" styleClass="clean-content">
+        <padding>
+            <Insets bottom="10" left="4" right="10" top="4"/>
+        </padding>
+
+        <HBox alignment="CENTER_LEFT" spacing="16" styleClass="clean-header">
+            <VBox spacing="4">
+                <Label text="Limpieza" styleClass="clean-title"/>
+                <Label text="Optimizacion segura, espacio recuperable y acciones para resolver problemas" styleClass="clean-subtitle"/>
+            </VBox>
+            <Region HBox.hgrow="ALWAYS"/>
+            <VBox alignment="CENTER_RIGHT" spacing="4" styleClass="clean-chip">
+                <Label text="Modo seguro" styleClass="clean-chip-title"/>
+                <Label text="Rutas controladas" styleClass="clean-chip-subtitle"/>
+            </VBox>
+        </HBox>
+
+        <HBox spacing="16" styleClass="hero-layout">
+            <VBox fx:id="cleaningStateCard" spacing="16" styleClass="clean-state-card state-recommended" HBox.hgrow="ALWAYS">
+                <HBox alignment="CENTER_LEFT" spacing="14">
+                    <StackPane styleClass="state-icon-box">
+                        <Label fx:id="stateIconLabel" text="!" styleClass="state-icon-label"/>
+                    </StackPane>
+                    <VBox spacing="3">
+                        <Label text="Estado de limpieza" styleClass="section-kicker"/>
+                        <Label fx:id="stateLabel" text="Recomendado limpiar" styleClass="state-title"/>
+                    </VBox>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <VBox alignment="CENTER_RIGHT" spacing="4">
+                        <Label fx:id="scoreLabel" text="0/100" styleClass="score-label"/>
+                        <Label text="Puntuacion" styleClass="score-meta"/>
+                    </VBox>
+                </HBox>
+                <Label fx:id="stateSummaryLabel" text="Ejecute un analisis para estimar espacio recuperable y acciones recomendadas." wrapText="true" styleClass="state-summary"/>
+                <HBox alignment="CENTER_LEFT" spacing="12">
+                    <VBox spacing="3">
+                        <Label text="Espacio recuperable" styleClass="section-kicker"/>
+                        <Label fx:id="recoverableHeroLabel" text="0 MB" styleClass="recoverable-value"/>
+                    </VBox>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <ProgressBar fx:id="scoreProgress" progress="0" prefWidth="220" styleClass="score-progress"/>
+                </HBox>
+            </VBox>
+
+            <VBox spacing="12" styleClass="action-card">
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <ProgressIndicator fx:id="scanProgress" visible="false" managed="false" prefHeight="30" prefWidth="30" styleClass="scan-progress"/>
+                    <VBox spacing="2">
+                        <Label text="Centro de acciones" styleClass="section-title"/>
+                        <Label fx:id="actionStatusLabel" text="Listo para optimizar." wrapText="true" styleClass="action-status"/>
+                    </VBox>
+                </HBox>
+                <Button fx:id="analyzeButton" text="Analizar sistema" onAction="#handleAnalyze" onMouseEntered="#handleActionHover" onMouseExited="#handleActionExit" maxWidth="Infinity" styleClass="action-button primary-action">
+                    <graphic><SVGPath content="M21 21l-5-5 M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0z" styleClass="button-svg"/></graphic>
+                </Button>
+                <Button fx:id="cleanNowButton" text="Limpiar ahora" onAction="#handleCleanNow" onMouseEntered="#handleActionHover" onMouseExited="#handleActionExit" maxWidth="Infinity" styleClass="action-button success-action">
+                    <graphic><SVGPath content="M4 14l6 6L20 4 M4 6h7 M4 10h5" styleClass="button-svg"/></graphic>
+                </Button>
+                <HBox spacing="10">
+                    <Button fx:id="freeRamButton" text="Liberar RAM" onAction="#handleFreeRam" maxWidth="Infinity" styleClass="action-button secondary-action" HBox.hgrow="ALWAYS"/>
+                    <Button fx:id="uninstallButton" text="Borrar programas" onAction="#handleOpenUninstaller" maxWidth="Infinity" styleClass="action-button secondary-action" HBox.hgrow="ALWAYS"/>
+                </HBox>
+                <ProgressBar fx:id="actionProgress" visible="false" managed="false" progress="0" styleClass="action-progress"/>
+            </VBox>
+        </HBox>
+
+        <FlowPane fx:id="metricsFlow" hgap="14" vgap="14" styleClass="metrics-flow">
+            <VBox prefWidth="164" spacing="8" styleClass="metric-card">
+                <Label text="Temporales" styleClass="metric-label"/>
+                <Label fx:id="tempMetricLabel" text="0" styleClass="metric-value"/>
+                <Label text="Archivos" styleClass="metric-caption"/>
+            </VBox>
+            <VBox prefWidth="164" spacing="8" styleClass="metric-card">
+                <Label text="Cache" styleClass="metric-label"/>
+                <Label fx:id="cacheMetricLabel" text="0" styleClass="metric-value"/>
+                <Label text="Detectada" styleClass="metric-caption"/>
+            </VBox>
+            <VBox prefWidth="164" spacing="8" styleClass="metric-card">
+                <Label text="Recuperable" styleClass="metric-label"/>
+                <Label fx:id="recoverableMetricLabel" text="0 MB" styleClass="metric-value small-metric"/>
+                <Label text="Estimado" styleClass="metric-caption"/>
+            </VBox>
+            <VBox prefWidth="164" spacing="8" styleClass="metric-card">
+                <Label text="Analizados" styleClass="metric-label"/>
+                <Label fx:id="filesMetricLabel" text="0" styleClass="metric-value"/>
+                <Label text="Archivos" styleClass="metric-caption"/>
+            </VBox>
+            <VBox prefWidth="164" spacing="8" styleClass="metric-card">
+                <Label text="Ultimo analisis" styleClass="metric-label"/>
+                <Label fx:id="lastAnalysisMetricLabel" text="Pendiente" styleClass="metric-value small-metric"/>
+                <Label text="Local" styleClass="metric-caption"/>
+            </VBox>
+        </FlowPane>
+
+        <FlowPane hgap="16" vgap="16" styleClass="main-grid">
+            <VBox prefWidth="520" spacing="12" styleClass="panel-card">
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label text="Archivos innecesarios" styleClass="section-title"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label text="Limpieza segura" styleClass="mini-badge"/>
+                </HBox>
+                <VBox fx:id="cleaningItemsList" spacing="10"/>
+            </VBox>
+
+            <VBox prefWidth="330" spacing="16" styleClass="side-column">
+                <VBox spacing="12" styleClass="panel-card">
+                    <Label text="Espacio por categoria" styleClass="section-title"/>
+                    <VBox fx:id="categoryBars" spacing="12"/>
+                </VBox>
+                <VBox spacing="12" styleClass="panel-card">
+                    <Label text="Recomendaciones inteligentes" styleClass="section-title"/>
+                    <VBox fx:id="recommendationsList" spacing="10"/>
+                </VBox>
+                <VBox spacing="12" styleClass="panel-card">
+                    <Label text="Programas para revisar" styleClass="section-title"/>
+                    <VBox fx:id="programsList" spacing="10"/>
+                    <Label text="Usa “Borrar programas” para abrir el desinstalador seguro de Windows." wrapText="true" styleClass="helper-text"/>
+                </VBox>
+                <VBox spacing="12" styleClass="panel-card">
+                    <Label text="Actividad reciente" styleClass="section-title"/>
+                    <VBox fx:id="activityList" spacing="10"/>
+                </VBox>
+            </VBox>
+        </FlowPane>
+    </VBox>
+</ScrollPane>

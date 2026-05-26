@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+
+<ScrollPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.controllers.PerfilController"
+            fitToWidth="true"
+            styleClass="profile-root"
+            stylesheets="@/org/example/styles/perfil.css"
+            fx:id="rootPane">
+
+    <VBox spacing="24.0">
+        <padding>
+            <Insets bottom="24.0"/>
+        </padding>
+        
+        <!-- HEADER TITLE -->
+        <Label text="Perfil de Usuario" styleClass="profile-title"/>
+
+        <!-- TOP CARD: AVATAR & BASIC INFO -->
+        <HBox styleClass="premium-card" alignment="CENTER_LEFT" spacing="24.0">
+            <StackPane styleClass="avatar-bg">
+                <Label fx:id="avatarLabel" text="A" styleClass="avatar-initial"/>
+            </StackPane>
+            
+            <VBox spacing="4.0" HBox.hgrow="ALWAYS">
+                <Label fx:id="nameLabel" text="Cargando..." styleClass="user-name-title"/>
+                <Label fx:id="emailLabel" text="cargando@ejemplo.com" styleClass="user-email-label"/>
+                <HBox spacing="8.0">
+                    <Label text="Activo" styleClass="status-badge"/>
+                </HBox>
+            </VBox>
+
+            <Button text="Editar Perfil" styleClass="edit-btn" onAction="#handleEdit"/>
+        </HBox>
+
+        <!-- TWO COLUMNS LAYOUT -->
+        <HBox spacing="24.0">
+            
+            <!-- LEFT COLUMN: SYSTEM INFO & STATS -->
+            <VBox spacing="24.0" HBox.hgrow="ALWAYS" maxWidth="400">
+                
+                <!-- SYSTEM INFO CARD -->
+                <VBox styleClass="premium-card" spacing="20.0">
+                    <Label text="Información del Sistema" styleClass="section-title"/>
+                    
+                    <GridPane vgap="16.0" hgap="24.0">
+                        <!-- ID -->
+                        <Label text="ID Usuario:" styleClass="info-label" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                        <Label fx:id="idLabel" text="-" styleClass="info-value" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                        
+                        <!-- Fecha Registro -->
+                        <Label text="Miembro desde:" styleClass="info-label" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                        <Label fx:id="regDateLabel" text="-" styleClass="info-value" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                        
+                        <!-- Último Acceso -->
+                        <Label text="Último acceso:" styleClass="info-label" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                        <Label fx:id="lastAccessLabel" text="-" styleClass="info-value" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                    </GridPane>
+                </VBox>
+
+                <!-- STATS ROW -->
+                <VBox styleClass="premium-card" spacing="16.0">
+                    <Label text="Estadísticas Globales" styleClass="section-title"/>
+                    
+                    <VBox spacing="12.0">
+                        <HBox styleClass="stat-card">
+                            <StackPane styleClass="stat-icon-wrapper">
+                                <SVGPath content="M4 6h16M4 10h16M4 14h16M4 18h16" styleClass="stat-icon"/>
+                            </StackPane>
+                            <VBox spacing="2.0">
+                                <Label fx:id="programsCountLabel" text="0" styleClass="stat-value"/>
+                                <Label text="Programas Detectados" styleClass="stat-label"/>
+                            </VBox>
+                        </HBox>
+
+                        <HBox styleClass="stat-card">
+                            <StackPane styleClass="stat-icon-wrapper">
+                                <SVGPath content="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" styleClass="stat-icon"/>
+                            </StackPane>
+                            <VBox spacing="2.0">
+                                <Label fx:id="eventsCountLabel" text="0" styleClass="stat-value"/>
+                                <Label text="Eventos Registrados" styleClass="stat-label"/>
+                            </VBox>
+                        </HBox>
+                    </VBox>
+                </VBox>
+            </VBox>
+
+            <!-- RIGHT COLUMN: RECENT ACTIVITY -->
+            <VBox styleClass="premium-card" spacing="20.0" HBox.hgrow="ALWAYS">
+                <HBox alignment="CENTER_LEFT">
+                    <Label text="Actividad Reciente" styleClass="section-title"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button text="Ver todo" styleClass="edit-btn" style="-fx-background-color: transparent; -fx-text-fill: #6b7280; -fx-padding: 4px;"/>
+                </HBox>
+
+                <VBox fx:id="activityListContainer" styleClass="activity-list">
+                    <!-- Activities populated by controller -->
+                    <Label text="No hay actividad reciente." styleClass="info-label"/>
+                </VBox>
+            </VBox>
+        </HBox>
+
+        <!-- EXPORT SECTION -->
+        <VBox styleClass="premium-card" spacing="20.0">
+            <Label text="Descargar Reportes" styleClass="section-title"/>
+            
+            <HBox spacing="24.0">
+                <!-- Programas Export Card -->
+                <VBox styleClass="export-card" spacing="12.0" HBox.hgrow="ALWAYS">
+                    <Label text="Programas" styleClass="export-title"/>
+                    <Label text="Lista completa de software y controladores detectados en tu sistema." styleClass="export-desc" wrapText="true"/>
+                    <HBox spacing="8.0">
+                        <Button text="PDF" styleClass="export-btn, pdf-btn" onAction="#exportProgramasPdf"/>
+                        <Button text="CSV" styleClass="export-btn, csv-btn" onAction="#exportProgramasCsv"/>
+                        <Button text="TXT" styleClass="export-btn, txt-btn" onAction="#exportProgramasTxt"/>
+                    </HBox>
+                </VBox>
+
+                <!-- Historial Export Card -->
+                <VBox styleClass="export-card" spacing="12.0" HBox.hgrow="ALWAYS">
+                    <Label text="Historial" styleClass="export-title"/>
+                    <Label text="Registro de todas las actividades y eventos importantes realizados." styleClass="export-desc" wrapText="true"/>
+                    <HBox spacing="8.0">
+                        <Button text="PDF" styleClass="export-btn, pdf-btn" onAction="#exportHistorialPdf"/>
+                        <Button text="CSV" styleClass="export-btn, csv-btn" onAction="#exportHistorialCsv"/>
+                        <Button text="TXT" styleClass="export-btn, txt-btn" onAction="#exportHistorialTxt"/>
+                    </HBox>
+                </VBox>
+
+                <!-- Sistema Export Card -->
+                <VBox styleClass="export-card" spacing="12.0" HBox.hgrow="ALWAYS">
+                    <Label text="Sistema" styleClass="export-title"/>
+                    <Label text="Resumen del entorno de ejecución, hardware básico y configuración." styleClass="export-desc" wrapText="true"/>
+                    <HBox spacing="8.0">
+                        <Button text="PDF" styleClass="export-btn, pdf-btn" onAction="#exportSistemaPdf"/>
+                        <Button text="CSV" styleClass="export-btn, csv-btn" onAction="#exportSistemaCsv"/>
+                        <Button text="TXT" styleClass="export-btn, txt-btn" onAction="#exportSistemaTxt"/>
+                    </HBox>
+                </VBox>
+            </HBox>
+        </VBox>
+    </VBox>
+</ScrollPane>

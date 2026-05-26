@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:id="dashboardRoot"
+      fx:controller="org.example.controllers.DashboardController"
+      prefHeight="640.0"
+      prefWidth="860.0"
+      styleClass="dashboard-root"
+      stylesheets="@/org/example/styles/dashboard.css">
+
+    <ScrollPane fitToWidth="true"
+                hbarPolicy="NEVER"
+                styleClass="dashboard-scroll"
+                VBox.vgrow="ALWAYS">
+        <VBox spacing="22" styleClass="dashboard-content">
+            <padding>
+                <Insets bottom="8" left="4" right="10" top="4"/>
+            </padding>
+
+            <HBox alignment="CENTER_LEFT" spacing="16" styleClass="dashboard-header">
+                <VBox spacing="4">
+                    <Label text="Dashboard" styleClass="dashboard-title"/>
+                    <Label text="Monitoreo inteligente del sistema en tiempo real" styleClass="dashboard-subtitle"/>
+                </VBox>
+                <Region HBox.hgrow="ALWAYS"/>
+                <VBox alignment="CENTER_RIGHT" spacing="4" styleClass="header-status">
+                    <Label text="OptiScan Pro" styleClass="header-status-title"/>
+                    <Label text="Centro de control" styleClass="header-status-subtitle"/>
+                </VBox>
+            </HBox>
+
+            <FlowPane fx:id="kpiFlow" hgap="14" vgap="14" styleClass="kpi-flow">
+                <VBox prefWidth="214" spacing="12" styleClass="metric-card metric-card-cpu">
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <StackPane styleClass="metric-icon icon-blue">
+                            <SVGPath content="M4 4h16v16H4z M9 1v3 M15 1v3 M9 20v3 M15 20v3 M1 9h3 M1 15h3 M20 9h3 M20 15h3 M9 9h6v6H9z" styleClass="metric-svg"/>
+                        </StackPane>
+                        <VBox spacing="2">
+                            <Label text="CPU" styleClass="metric-name"/>
+                            <Label fx:id="cpuStatusLabel" text="Carga estable" styleClass="metric-status"/>
+                        </VBox>
+                    </HBox>
+                    <Label fx:id="cpuValueLabel" text="0%" styleClass="metric-value"/>
+                    <StackPane fx:id="cpuMiniChartHost" prefHeight="58" styleClass="mini-chart-host"/>
+                </VBox>
+
+                <VBox prefWidth="214" spacing="12" styleClass="metric-card">
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <StackPane styleClass="metric-icon icon-green">
+                            <SVGPath content="M6 19V5h12v14H6z M9 9h6 M9 13h6 M3 9h3 M3 15h3 M18 9h3 M18 15h3" styleClass="metric-svg"/>
+                        </StackPane>
+                        <VBox spacing="2">
+                            <Label text="RAM" styleClass="metric-name"/>
+                            <Label fx:id="ramDetailLabel" text="0 GB de 0 GB" styleClass="metric-status"/>
+                        </VBox>
+                    </HBox>
+                    <Label fx:id="ramValueLabel" text="0%" styleClass="metric-value"/>
+                    <ProgressBar fx:id="ramProgress" prefWidth="190" progress="0" styleClass="ram-progress"/>
+                </VBox>
+
+                <VBox prefWidth="214" spacing="12" styleClass="metric-card">
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <StackPane styleClass="metric-icon icon-cyan">
+                            <SVGPath content="M4 7h16v10H4z M7 17v3h10v-3 M8 11h8" styleClass="metric-svg"/>
+                        </StackPane>
+                        <VBox spacing="2">
+                            <Label text="Disco" styleClass="metric-name"/>
+                            <Label fx:id="diskDetailLabel" text="0 GB libres" styleClass="metric-status"/>
+                        </VBox>
+                    </HBox>
+                    <StackPane alignment="CENTER" styleClass="disk-ring-box">
+                        <ProgressIndicator fx:id="diskIndicator" progress="0" styleClass="disk-ring"/>
+                        <Label fx:id="diskValueLabel" text="0%" styleClass="disk-ring-value"/>
+                    </StackPane>
+                </VBox>
+
+                <VBox fx:id="systemStateCard" prefWidth="214" spacing="12" styleClass="metric-card state-card state-safe">
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <StackPane styleClass="metric-icon state-icon-box">
+                            <Label fx:id="systemStateIcon" text="OK" styleClass="state-icon-text"/>
+                        </StackPane>
+                        <VBox spacing="2">
+                            <Label text="Estado general" styleClass="metric-name"/>
+                            <Label text="Diagnostico activo" styleClass="metric-status"/>
+                        </VBox>
+                    </HBox>
+                    <Label fx:id="systemStateLabel" text="Seguro" styleClass="state-value"/>
+                    <Label fx:id="systemStateDescription" text="El sistema opera dentro de rangos saludables." wrapText="true" styleClass="state-description"/>
+                </VBox>
+            </FlowPane>
+
+            <VBox spacing="12">
+                <Label text="Acciones rapidas" styleClass="section-title"/>
+                <FlowPane fx:id="actionsFlow" hgap="14" vgap="14" styleClass="actions-flow">
+                    <Button fx:id="quickScanButton" onMouseEntered="#handleActionHover" onMouseExited="#handleActionExit" prefWidth="206" styleClass="quick-action-card">
+                        <graphic>
+                            <VBox alignment="CENTER_LEFT" spacing="10">
+                                <StackPane styleClass="action-icon action-blue">
+                                    <SVGPath content="M21 21l-5-5 M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0z" styleClass="action-svg"/>
+                                </StackPane>
+                                <Label text="Escaneo rapido" styleClass="action-title"/>
+                                <Label text="Detectar programas instalados" wrapText="true" styleClass="action-subtitle"/>
+                            </VBox>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="quickCleanButton" onMouseEntered="#handleActionHover" onMouseExited="#handleActionExit" prefWidth="206" styleClass="quick-action-card">
+                        <graphic>
+                            <VBox alignment="CENTER_LEFT" spacing="10">
+                                <StackPane styleClass="action-icon action-green">
+                                    <SVGPath content="M4 14l6 6L20 4 M4 6h7 M4 10h5" styleClass="action-svg"/>
+                                </StackPane>
+                                <Label text="Limpieza rapida" styleClass="action-title"/>
+                                <Label text="Abrir modulo de limpieza" wrapText="true" styleClass="action-subtitle"/>
+                            </VBox>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="securityButton" onMouseEntered="#handleActionHover" onMouseExited="#handleActionExit" prefWidth="206" styleClass="quick-action-card">
+                        <graphic>
+                            <VBox alignment="CENTER_LEFT" spacing="10">
+                                <StackPane styleClass="action-icon action-red">
+                                    <SVGPath content="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" styleClass="action-svg"/>
+                                </StackPane>
+                                <Label text="Analisis de seguridad" styleClass="action-title"/>
+                                <Label text="Revisar riesgos del sistema" wrapText="true" styleClass="action-subtitle"/>
+                            </VBox>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="manageProgramsButton" onMouseEntered="#handleActionHover" onMouseExited="#handleActionExit" prefWidth="206" styleClass="quick-action-card">
+                        <graphic>
+                            <VBox alignment="CENTER_LEFT" spacing="10">
+                                <StackPane styleClass="action-icon action-dark">
+                                    <SVGPath content="M21 16V8l-9-5-9 5v8l9 5 9-5z M3.5 8.5L12 13l8.5-4.5 M12 13v8" styleClass="action-svg"/>
+                                </StackPane>
+                                <Label text="Gestion de programas" styleClass="action-title"/>
+                                <Label text="Administrar inventario detectado" wrapText="true" styleClass="action-subtitle"/>
+                            </VBox>
+                        </graphic>
+                    </Button>
+                </FlowPane>
+            </VBox>
+
+            <FlowPane hgap="16" vgap="16" styleClass="middle-layout">
+                <VBox prefWidth="410" spacing="12" styleClass="panel-card">
+                    <Label text="Actividad reciente" styleClass="section-title"/>
+                    <VBox fx:id="activityList" spacing="10" styleClass="timeline-list"/>
+                </VBox>
+                <VBox prefWidth="410" spacing="12" styleClass="panel-card alerts-panel">
+                    <Label text="Alertas inteligentes" styleClass="section-title"/>
+                    <VBox fx:id="alertsList" spacing="10"/>
+                </VBox>
+            </FlowPane>
+
+            <FlowPane hgap="16" vgap="16" styleClass="charts-layout">
+                <VBox prefWidth="410" spacing="12" styleClass="panel-card chart-panel">
+                    <Label text="Rendimiento CPU" styleClass="section-title"/>
+                    <StackPane fx:id="cpuChartHost" prefHeight="220" styleClass="chart-host"/>
+                </VBox>
+                <VBox prefWidth="410" spacing="12" styleClass="panel-card chart-panel">
+                    <Label text="Rendimiento RAM" styleClass="section-title"/>
+                    <StackPane fx:id="ramChartHost" prefHeight="220" styleClass="chart-host"/>
+                </VBox>
+            </FlowPane>
+
+            <VBox spacing="12" styleClass="panel-card">
+                <HBox alignment="CENTER_LEFT" spacing="12">
+                    <Label text="Gestion rapida de programas" styleClass="section-title"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                </HBox>
+                <GridPane fx:id="programsGrid" hgap="14" vgap="4" styleClass="program-table">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="46"/>
+                        <ColumnConstraints percentWidth="18"/>
+                        <ColumnConstraints percentWidth="36"/>
+                    </columnConstraints>
+                </GridPane>
+            </VBox>
+        </VBox>
+    </ScrollPane>
+</VBox>

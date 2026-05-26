@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.controllers.ReportesController"
+            prefHeight="720.0" prefWidth="1080.0"
+            styleClass="reportes-root"
+            stylesheets="@/org/example/styles/reportes.css">
+    <center>
+        <VBox spacing="20" alignment="CENTER">
+            <Label text="Reportes y Exportación" styleClass="header-title" />
+            <Label text="Genera y exporta información del sistema" styleClass="header-subtitle" />
+            <!-- Cards placeholder -->
+        </VBox>
+    </center>
+</BorderPane>

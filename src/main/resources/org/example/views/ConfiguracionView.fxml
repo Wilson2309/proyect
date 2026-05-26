@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+
+<ScrollPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:id="rootPane"
+            fx:controller="org.example.controllers.ConfiguracionController"
+            fitToWidth="true"
+            hbarPolicy="NEVER"
+            styleClass="config-root"
+            stylesheets="@/org/example/styles/configuracion.css">
+
+    <VBox spacing="22" styleClass="config-content">
+        <padding>
+            <Insets bottom="10" left="4" right="10" top="4"/>
+        </padding>
+
+        <HBox alignment="CENTER_LEFT" spacing="16" styleClass="config-header">
+            <VBox spacing="4">
+                <Label text="Configuracion" styleClass="config-title"/>
+                <Label text="Preferencias, automatizacion y controles del sistema" styleClass="config-subtitle"/>
+            </VBox>
+            <Region HBox.hgrow="ALWAYS"/>
+            <VBox alignment="CENTER_RIGHT" spacing="4" styleClass="status-chip">
+                <Label text="Auto guardado" styleClass="status-chip-title"/>
+                <Label text="Activo" styleClass="status-chip-subtitle"/>
+            </VBox>
+        </HBox>
+
+        <FlowPane hgap="14" vgap="14" styleClass="summary-flow">
+            <VBox prefWidth="198" spacing="8" styleClass="summary-card">
+                <Label text="Java" styleClass="summary-label"/>
+                <Label fx:id="javaVerLabel" text="-" styleClass="summary-value"/>
+            </VBox>
+            <VBox prefWidth="198" spacing="8" styleClass="summary-card">
+                <Label text="Sistema operativo" styleClass="summary-label"/>
+                <Label fx:id="osLabel" text="-" wrapText="true" styleClass="summary-value"/>
+            </VBox>
+            <VBox prefWidth="198" spacing="8" styleClass="summary-card">
+                <Label text="Procesador" styleClass="summary-label"/>
+                <Label fx:id="cpuLabel" text="-" wrapText="true" styleClass="summary-value"/>
+            </VBox>
+            <VBox prefWidth="198" spacing="8" styleClass="summary-card">
+                <Label text="Memoria" styleClass="summary-label"/>
+                <Label fx:id="ramLabel" text="-" styleClass="summary-value"/>
+            </VBox>
+        </FlowPane>
+
+        <FlowPane hgap="16" vgap="16" styleClass="settings-flow">
+            <VBox prefWidth="410" spacing="16" styleClass="settings-card">
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <StackPane styleClass="section-icon icon-blue">
+                        <SVGPath content="M12 3v3 M12 18v3 M4.9 4.9L7 7 M17 17l2.1 2.1 M3 12h3 M18 12h3 M4.9 19.1L7 17 M17 7l2.1-2.1 M9 12a3 3 0 1 0 6 0 3 3 0 0 0-6 0z" styleClass="section-svg"/>
+                    </StackPane>
+                    <VBox spacing="2">
+                        <Label text="Apariencia" styleClass="section-title"/>
+                        <Label text="Ajusta como se siente la interfaz." styleClass="section-subtitle"/>
+                    </VBox>
+                </HBox>
+                <VBox spacing="12">
+                    <CheckBox fx:id="animacionesToggle" text="Animaciones suaves" styleClass="saas-toggle"/>
+                    <CheckBox fx:id="modoOscuroToggle" text="Modo oscuro" styleClass="saas-toggle"/>
+                    <HBox alignment="CENTER_LEFT" spacing="12" styleClass="setting-row">
+                        <VBox spacing="2">
+                            <Label text="Densidad visual" styleClass="setting-title"/>
+                            <Label text="Controla el espacio de la interfaz." styleClass="setting-description"/>
+                        </VBox>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <ComboBox fx:id="densidadCombo" prefWidth="142" styleClass="saas-combo-box"/>
+                    </HBox>
+                </VBox>
+            </VBox>
+
+            <VBox prefWidth="410" spacing="16" styleClass="settings-card">
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <StackPane styleClass="section-icon icon-green">
+                        <SVGPath content="M21 21l-5-5 M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0z M10 7v6l4 2" styleClass="section-svg"/>
+                    </StackPane>
+                    <VBox spacing="2">
+                        <Label text="Escaneo y monitor" styleClass="section-title"/>
+                        <Label text="Automatiza deteccion y datos en tiempo real." styleClass="section-subtitle"/>
+                    </VBox>
+                </HBox>
+                <VBox spacing="12">
+                    <CheckBox fx:id="escaneoAutoToggle" text="Escaneo automatico al iniciar" styleClass="saas-toggle"/>
+                    <CheckBox fx:id="incluirControladoresToggle" text="Incluir controladores de sistema" styleClass="saas-toggle"/>
+                    <CheckBox fx:id="actualizacionAutoToggle" text="Actualizar metricas automaticamente" styleClass="saas-toggle"/>
+                </VBox>
+            </VBox>
+
+            <VBox prefWidth="410" spacing="16" styleClass="settings-card">
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <StackPane styleClass="section-icon icon-purple">
+                        <SVGPath content="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9 M10 21h4" styleClass="section-svg"/>
+                    </StackPane>
+                    <VBox spacing="2">
+                        <Label text="Notificaciones" styleClass="section-title"/>
+                        <Label text="Decide cuando OptiScan puede avisarte." styleClass="section-subtitle"/>
+                    </VBox>
+                </HBox>
+                <VBox spacing="12">
+                    <CheckBox fx:id="mensajesToggle" text="Mostrar mensajes del sistema" styleClass="saas-toggle"/>
+                    <CheckBox fx:id="alertasToggle" text="Permitir alertas visuales emergentes" styleClass="saas-toggle"/>
+                    <Button fx:id="testToastButton" text="Probar notificacion" onAction="#handleTestNotification" maxWidth="Infinity" styleClass="secondary-button"/>
+                </VBox>
+            </VBox>
+
+            <VBox prefWidth="410" spacing="16" styleClass="settings-card tools-card">
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <StackPane styleClass="section-icon icon-dark">
+                        <SVGPath content="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.7-3.7a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9l-3.7 3.7z" styleClass="section-svg"/>
+                    </StackPane>
+                    <VBox spacing="2">
+                        <Label text="Herramientas rapidas" styleClass="section-title"/>
+                        <Label text="Acciones utiles sin salir de Configuracion." styleClass="section-subtitle"/>
+                    </VBox>
+                </HBox>
+                <GridPane hgap="10" vgap="10">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="50"/>
+                        <ColumnConstraints percentWidth="50"/>
+                    </columnConstraints>
+                    <Button fx:id="scanNowButton" text="Escanear ahora" onAction="#handleScanNow" maxWidth="Infinity" styleClass="primary-button" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                    <Button fx:id="clearHistoryButton" text="Limpiar historial" onAction="#handleClearHistory" maxWidth="Infinity" styleClass="danger-button" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                    <Button fx:id="resetButton" text="Restablecer ajustes" onAction="#handleResetDefaults" maxWidth="Infinity" styleClass="secondary-button" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="2"/>
+                </GridPane>
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <ProgressIndicator fx:id="scanProgress" visible="false" managed="false" prefHeight="24" prefWidth="24" styleClass="scan-progress"/>
+                    <Label fx:id="statusLabel" text="Configuracion lista." wrapText="true" styleClass="status-label"/>
+                </HBox>
+            </VBox>
+        </FlowPane>
+
+        <VBox spacing="12" styleClass="system-card">
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label text="Almacenamiento local" styleClass="section-title"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label text="Lectura del equipo" styleClass="mini-badge"/>
+            </HBox>
+            <GridPane hgap="14" vgap="10">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="35"/>
+                    <ColumnConstraints percentWidth="65"/>
+                </columnConstraints>
+                <Label text="Disco disponible" styleClass="info-label" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <Label fx:id="diskLabel" text="-" wrapText="true" styleClass="info-value" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <Label text="Persistencia" styleClass="info-label" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <Label text="Las preferencias se guardan en el perfil local del usuario." wrapText="true" styleClass="info-value" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            </GridPane>
+        </VBox>
+    </VBox>
+</ScrollPane>
