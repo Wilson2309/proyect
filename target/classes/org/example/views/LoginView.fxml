@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:id="rootPane"
+           fx:controller="org.example.controllers.LoginController"
+           prefHeight="640.0"
+           prefWidth="480.0"
+           styleClass="auth-root"
+           stylesheets="@/org/example/styles/login.css">
+
+    <VBox alignment="CENTER"
+          spacing="0"
+          StackPane.alignment="CENTER">
+
+        <VBox fx:id="authCard"
+              alignment="CENTER_LEFT"
+              spacing="14"
+              styleClass="auth-card">
+
+            <Label styleClass="auth-title" text="OptiScan Pro"/>
+            <Label styleClass="auth-subtitle" text="Inicia sesión en tu cuenta"/>
+
+            <Label fx:id="messageLabel"
+                   managed="false"
+                   styleClass="auth-message"
+                   visible="false"
+                   wrapText="true"/>
+
+            <Label styleClass="auth-field-label" text="Usuario o correo"/>
+            <TextField fx:id="usernameField"
+                       promptText="usuario@ejemplo.com"
+                       styleClass="auth-textfield"/>
+
+            <Label styleClass="auth-field-label" text="Contraseña"/>
+            <PasswordField fx:id="passwordField"
+                           promptText="••••••••"
+                           styleClass="auth-passwordfield"/>
+
+            <Button fx:id="loginButton"
+                    maxWidth="Infinity"
+                    mnemonicParsing="false"
+                    onAction="#handleLogin"
+                    styleClass="auth-primary-button"
+                    text="Iniciar sesión"/>
+
+            <VBox alignment="CENTER" styleClass="auth-footer">
+                <Label styleClass="auth-footer-text" text="¿No tienes cuenta?"/>
+                <Hyperlink fx:id="registerLink"
+                           onAction="#goToRegister"
+                           styleClass="auth-secondary-button"
+                           text="Registrarse"/>
+            </VBox>
+        </VBox>
+    </VBox>
+</StackPane>

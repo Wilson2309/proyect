@@ -1,0 +1,398 @@
+/* OptiScan Pro - Limpieza */
+
+.clean-root {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-font-family: "Segoe UI Variable", "Segoe UI", sans-serif;
+}
+
+.clean-root > .viewport {
+    -fx-background-color: transparent;
+}
+
+.clean-root .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 10;
+}
+
+.clean-root .thumb {
+    -fx-background-color: #cbd5e1;
+    -fx-background-radius: 12;
+}
+
+.clean-title {
+    -fx-text-fill: #0f172a;
+    -fx-font-size: 28px;
+    -fx-font-weight: 900;
+}
+
+.clean-subtitle,
+.clean-chip-subtitle,
+.score-meta,
+.state-summary,
+.action-status,
+.metric-caption,
+.helper-text {
+    -fx-text-fill: #64748b;
+    -fx-font-size: 12.5px;
+}
+
+.clean-chip,
+.clean-state-card,
+.action-card,
+.metric-card,
+.panel-card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 18;
+    -fx-border-color: #e5e7eb;
+    -fx-border-radius: 18;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.06), 18, 0, 0, 4);
+}
+
+.clean-chip {
+    -fx-padding: 10 14 10 14;
+}
+
+.clean-chip-title {
+    -fx-text-fill: #0f172a;
+    -fx-font-size: 12.5px;
+    -fx-font-weight: 900;
+}
+
+.clean-state-card,
+.action-card,
+.panel-card {
+    -fx-padding: 18;
+}
+
+.action-card {
+    -fx-pref-width: 310;
+    -fx-min-width: 280;
+}
+
+.state-optimal {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #ffffff, #f0fdf4);
+    -fx-border-color: #bbf7d0;
+}
+
+.state-recommended {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #ffffff, #fffbeb);
+    -fx-border-color: #fde68a;
+}
+
+.state-saturated {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #ffffff, #fef2f2);
+    -fx-border-color: #fecaca;
+}
+
+.state-icon-box {
+    -fx-background-color: #fef3c7;
+    -fx-background-radius: 17;
+    -fx-min-width: 54;
+    -fx-min-height: 54;
+    -fx-max-width: 54;
+    -fx-max-height: 54;
+    -fx-alignment: center;
+}
+
+.state-optimal .state-icon-box {
+    -fx-background-color: #dcfce7;
+}
+
+.state-saturated .state-icon-box {
+    -fx-background-color: #fee2e2;
+}
+
+.state-icon-label {
+    -fx-text-fill: #b45309;
+    -fx-font-size: 16px;
+    -fx-font-weight: 900;
+}
+
+.state-optimal .state-icon-label {
+    -fx-text-fill: #15803d;
+}
+
+.state-saturated .state-icon-label {
+    -fx-text-fill: #b91c1c;
+}
+
+.section-kicker,
+.metric-label {
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 11px;
+    -fx-font-weight: 900;
+}
+
+.section-title {
+    -fx-text-fill: #0f172a;
+    -fx-font-size: 16px;
+    -fx-font-weight: 900;
+}
+
+.state-title {
+    -fx-text-fill: #0f172a;
+    -fx-font-size: 30px;
+    -fx-font-weight: 900;
+}
+
+.score-label {
+    -fx-text-fill: #0f172a;
+    -fx-font-size: 24px;
+    -fx-font-weight: 900;
+}
+
+.recoverable-value {
+    -fx-text-fill: #0f172a;
+    -fx-font-size: 28px;
+    -fx-font-weight: 900;
+}
+
+.score-progress,
+.action-progress,
+.category-progress {
+    -fx-accent: #14b8a6;
+}
+
+.score-progress .track,
+.action-progress .track,
+.category-progress .track {
+    -fx-background-color: #e5e7eb;
+    -fx-background-radius: 999;
+}
+
+.score-progress .bar,
+.action-progress .bar,
+.category-progress .bar {
+    -fx-background-radius: 999;
+}
+
+.score-progress .bar,
+.action-progress .bar {
+    -fx-background-color: linear-gradient(to right, #14b8a6, #2563eb);
+}
+
+.scan-progress {
+    -fx-progress-color: #14b8a6;
+}
+
+.action-button {
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-padding: 12 14 12 14;
+    -fx-font-size: 13px;
+    -fx-font-weight: 900;
+    -fx-cursor: hand;
+    -fx-alignment: center-left;
+    -fx-graphic-text-gap: 10;
+}
+
+.primary-action {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: #ffffff;
+}
+
+.primary-action:hover {
+    -fx-background-color: #1d4ed8;
+}
+
+.success-action {
+    -fx-background-color: #0f766e;
+    -fx-text-fill: #ffffff;
+}
+
+.success-action:hover {
+    -fx-background-color: #0d9488;
+}
+
+.secondary-action {
+    -fx-background-color: #f8fafc;
+    -fx-text-fill: #334155;
+    -fx-border-color: #e2e8f0;
+}
+
+.secondary-action:hover {
+    -fx-background-color: #f1f5f9;
+}
+
+.button-svg {
+    -fx-fill: transparent;
+    -fx-stroke: #ffffff;
+    -fx-stroke-width: 1.8;
+    -fx-stroke-line-cap: round;
+    -fx-stroke-line-join: round;
+}
+
+.metric-card {
+    -fx-padding: 16;
+    -fx-min-height: 112;
+}
+
+.metric-value {
+    -fx-text-fill: #0f172a;
+    -fx-font-size: 25px;
+    -fx-font-weight: 900;
+}
+
+.small-metric {
+    -fx-font-size: 16px;
+}
+
+.mini-badge {
+    -fx-background-color: #ecfeff;
+    -fx-text-fill: #0e7490;
+    -fx-background-radius: 999;
+    -fx-border-color: #a5f3fc;
+    -fx-border-radius: 999;
+    -fx-padding: 5 10 5 10;
+    -fx-font-size: 11px;
+    -fx-font-weight: 900;
+}
+
+.cleaning-row,
+.recommendation-item,
+.program-review-row,
+.activity-item {
+    -fx-background-color: #f8fafc;
+    -fx-background-radius: 14;
+    -fx-border-color: #e5e7eb;
+    -fx-border-radius: 14;
+    -fx-padding: 12;
+    -fx-alignment: center-left;
+}
+
+.cleaning-row:hover {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cbd5e1;
+}
+
+.cleaning-icon,
+.recommendation-icon,
+.activity-icon {
+    -fx-min-width: 36;
+    -fx-min-height: 36;
+    -fx-max-width: 36;
+    -fx-max-height: 36;
+    -fx-background-radius: 18;
+    -fx-alignment: center;
+    -fx-font-size: 10px;
+    -fx-font-weight: 900;
+}
+
+.item-title,
+.program-title,
+.activity-title {
+    -fx-text-fill: #0f172a;
+    -fx-font-size: 13.5px;
+    -fx-font-weight: 900;
+}
+
+.item-path,
+.program-publisher,
+.activity-desc,
+.recommendation-text {
+    -fx-text-fill: #64748b;
+    -fx-font-size: 12px;
+}
+
+.item-meta {
+    -fx-alignment: center-right;
+}
+
+.category-badge {
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-padding: 5 10 5 10;
+    -fx-font-size: 11px;
+    -fx-font-weight: 900;
+}
+
+.item-size,
+.program-size {
+    -fx-text-fill: #334155;
+    -fx-font-size: 12px;
+    -fx-font-weight: 850;
+}
+
+.item-date,
+.activity-time {
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 11px;
+}
+
+.category-title,
+.category-value {
+    -fx-text-fill: #334155;
+    -fx-font-size: 12px;
+    -fx-font-weight: 850;
+}
+
+.category-temp {
+    -fx-background-color: #dbeafe;
+    -fx-text-fill: #1d4ed8;
+    -fx-border-color: #bfdbfe;
+}
+
+.category-temp .bar {
+    -fx-background-color: #2563eb;
+}
+
+.category-cache {
+    -fx-background-color: #ccfbf1;
+    -fx-text-fill: #0f766e;
+    -fx-border-color: #99f6e4;
+}
+
+.category-cache .bar {
+    -fx-background-color: #14b8a6;
+}
+
+.category-logs {
+    -fx-background-color: #fef3c7;
+    -fx-text-fill: #b45309;
+    -fx-border-color: #fde68a;
+}
+
+.category-logs .bar {
+    -fx-background-color: #f59e0b;
+}
+
+.category-junk {
+    -fx-background-color: #f1f5f9;
+    -fx-text-fill: #475569;
+    -fx-border-color: #e2e8f0;
+}
+
+.category-junk .bar {
+    -fx-background-color: #64748b;
+}
+
+.recommendation-icon {
+    -fx-background-color: #e0f2fe;
+    -fx-text-fill: #0369a1;
+}
+
+.activity-icon {
+    -fx-background-color: #ecfdf5;
+    -fx-text-fill: #047857;
+}
+
+.cleaning-empty {
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 13px;
+    -fx-padding: 12;
+}
+
+.compact-mode .clean-state-card,
+.compact-mode .action-card,
+.compact-mode .metric-card,
+.compact-mode .panel-card {
+    -fx-padding: 14;
+}
+
+.spacious-mode .clean-state-card,
+.spacious-mode .action-card,
+.spacious-mode .metric-card,
+.spacious-mode .panel-card {
+    -fx-padding: 24;
+}

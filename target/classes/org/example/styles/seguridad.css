@@ -1,0 +1,372 @@
+/* OptiScan Pro - Seguridad */
+
+.security-root {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-font-family: "Segoe UI Variable", "Segoe UI", sans-serif;
+}
+
+.security-root > .viewport {
+    -fx-background-color: transparent;
+}
+
+.security-root .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 10;
+}
+
+.security-root .thumb {
+    -fx-background-color: #cbd5e1;
+    -fx-background-radius: 12;
+}
+
+.security-title {
+    -fx-text-fill: #0f172a;
+    -fx-font-size: 28px;
+    -fx-font-weight: 900;
+}
+
+.security-subtitle,
+.security-chip-subtitle,
+.score-meta,
+.scan-status,
+.metric-caption,
+.state-summary {
+    -fx-text-fill: #64748b;
+    -fx-font-size: 12.5px;
+}
+
+.security-chip,
+.security-state-card,
+.scan-card,
+.metric-card,
+.panel-card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 18;
+    -fx-border-color: #e5e7eb;
+    -fx-border-radius: 18;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.06), 18, 0, 0, 4);
+}
+
+.security-chip {
+    -fx-padding: 10 14 10 14;
+}
+
+.security-chip-title {
+    -fx-text-fill: #0f172a;
+    -fx-font-size: 12.5px;
+    -fx-font-weight: 900;
+}
+
+.security-state-card,
+.scan-card,
+.panel-card {
+    -fx-padding: 18;
+}
+
+.security-state-card {
+    -fx-min-height: 190;
+}
+
+.scan-card {
+    -fx-pref-width: 290;
+    -fx-min-width: 260;
+}
+
+.state-safe {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #ffffff, #f0fdf4);
+    -fx-border-color: #bbf7d0;
+}
+
+.state-attention {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #ffffff, #fffbeb);
+    -fx-border-color: #fde68a;
+}
+
+.state-risk {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #ffffff, #fef2f2);
+    -fx-border-color: #fecaca;
+}
+
+.state-icon-box {
+    -fx-background-color: #fef3c7;
+    -fx-background-radius: 17;
+    -fx-min-width: 54;
+    -fx-min-height: 54;
+    -fx-max-width: 54;
+    -fx-max-height: 54;
+    -fx-alignment: center;
+}
+
+.state-safe .state-icon-box {
+    -fx-background-color: #dcfce7;
+}
+
+.state-risk .state-icon-box {
+    -fx-background-color: #fee2e2;
+}
+
+.state-icon-label {
+    -fx-text-fill: #b45309;
+    -fx-font-size: 16px;
+    -fx-font-weight: 900;
+}
+
+.state-safe .state-icon-label {
+    -fx-text-fill: #15803d;
+}
+
+.state-risk .state-icon-label {
+    -fx-text-fill: #b91c1c;
+}
+
+.section-kicker {
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 11px;
+    -fx-font-weight: 900;
+}
+
+.state-title {
+    -fx-text-fill: #0f172a;
+    -fx-font-size: 30px;
+    -fx-font-weight: 900;
+}
+
+.score-label {
+    -fx-text-fill: #0f172a;
+    -fx-font-size: 24px;
+    -fx-font-weight: 900;
+}
+
+.score-progress,
+.deep-progress {
+    -fx-accent: #2563eb;
+}
+
+.score-progress .track,
+.deep-progress .track {
+    -fx-background-color: #e5e7eb;
+    -fx-background-radius: 999;
+}
+
+.score-progress .bar,
+.deep-progress .bar {
+    -fx-background-color: linear-gradient(to right, #2563eb, #14b8a6);
+    -fx-background-radius: 999;
+}
+
+.section-title {
+    -fx-text-fill: #0f172a;
+    -fx-font-size: 16px;
+    -fx-font-weight: 900;
+}
+
+.scan-progress {
+    -fx-progress-color: #2563eb;
+}
+
+.scan-button {
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-padding: 13 16 13 16;
+    -fx-font-size: 13.5px;
+    -fx-font-weight: 900;
+    -fx-cursor: hand;
+    -fx-alignment: center-left;
+    -fx-graphic-text-gap: 10;
+}
+
+.primary-scan-button {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: #ffffff;
+}
+
+.primary-scan-button:hover {
+    -fx-background-color: #1d4ed8;
+}
+
+.secondary-scan-button {
+    -fx-background-color: #f8fafc;
+    -fx-text-fill: #334155;
+    -fx-border-color: #e2e8f0;
+}
+
+.secondary-scan-button:hover {
+    -fx-background-color: #f1f5f9;
+}
+
+.button-svg {
+    -fx-fill: transparent;
+    -fx-stroke: #ffffff;
+    -fx-stroke-width: 1.8;
+    -fx-stroke-line-cap: round;
+    -fx-stroke-line-join: round;
+}
+
+.secondary-scan-button .button-svg {
+    -fx-stroke: #334155;
+}
+
+.metric-card {
+    -fx-padding: 16;
+    -fx-min-height: 112;
+}
+
+.metric-label {
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 11px;
+    -fx-font-weight: 900;
+}
+
+.metric-value {
+    -fx-text-fill: #0f172a;
+    -fx-font-size: 25px;
+    -fx-font-weight: 900;
+}
+
+.small-metric-value {
+    -fx-font-size: 16px;
+}
+
+.main-grid {
+    -fx-alignment: top-left;
+}
+
+.threats-panel {
+    -fx-min-width: 460;
+}
+
+.side-column {
+    -fx-min-width: 300;
+    -fx-pref-width: 330;
+}
+
+.side-panel {
+    -fx-min-width: 300;
+}
+
+.mini-badge {
+    -fx-background-color: #eff6ff;
+    -fx-text-fill: #1d4ed8;
+    -fx-background-radius: 999;
+    -fx-border-color: #bfdbfe;
+    -fx-border-radius: 999;
+    -fx-padding: 5 10 5 10;
+    -fx-font-size: 11px;
+    -fx-font-weight: 900;
+}
+
+.threat-row,
+.recommendation-item,
+.security-activity-item {
+    -fx-background-color: #f8fafc;
+    -fx-background-radius: 14;
+    -fx-border-color: #e5e7eb;
+    -fx-border-radius: 14;
+    -fx-padding: 12;
+    -fx-alignment: center-left;
+}
+
+.threat-row:hover {
+    -fx-border-color: #cbd5e1;
+    -fx-background-color: #ffffff;
+}
+
+.threat-icon,
+.activity-icon,
+.recommendation-icon {
+    -fx-min-width: 34;
+    -fx-min-height: 34;
+    -fx-max-width: 34;
+    -fx-max-height: 34;
+    -fx-background-radius: 17;
+    -fx-alignment: center;
+    -fx-font-weight: 900;
+    -fx-font-size: 11px;
+}
+
+.threat-title,
+.activity-title {
+    -fx-text-fill: #0f172a;
+    -fx-font-size: 13.5px;
+    -fx-font-weight: 900;
+}
+
+.threat-description,
+.activity-desc,
+.recommendation-text {
+    -fx-text-fill: #64748b;
+    -fx-font-size: 12.5px;
+}
+
+.threat-recommendation {
+    -fx-text-fill: #334155;
+    -fx-font-size: 12px;
+    -fx-font-weight: 750;
+}
+
+.threat-meta {
+    -fx-alignment: center-right;
+}
+
+.risk-badge {
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-padding: 5 10 5 10;
+    -fx-font-size: 11px;
+    -fx-font-weight: 900;
+}
+
+.risk-high {
+    -fx-background-color: #fee2e2;
+    -fx-text-fill: #b91c1c;
+    -fx-border-color: #fecaca;
+}
+
+.risk-medium {
+    -fx-background-color: #fef3c7;
+    -fx-text-fill: #b45309;
+    -fx-border-color: #fde68a;
+}
+
+.risk-low {
+    -fx-background-color: #dcfce7;
+    -fx-text-fill: #15803d;
+    -fx-border-color: #bbf7d0;
+}
+
+.threat-date,
+.activity-time {
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 11px;
+}
+
+.recommendation-icon {
+    -fx-background-color: #e0f2fe;
+    -fx-text-fill: #0369a1;
+}
+
+.activity-icon {
+    -fx-background-color: #eef2ff;
+    -fx-text-fill: #4f46e5;
+}
+
+.security-empty {
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 13px;
+    -fx-padding: 12;
+}
+
+.compact-mode .security-state-card,
+.compact-mode .scan-card,
+.compact-mode .metric-card,
+.compact-mode .panel-card {
+    -fx-padding: 14;
+}
+
+.spacious-mode .security-state-card,
+.spacious-mode .scan-card,
+.spacious-mode .metric-card,
+.spacious-mode .panel-card {
+    -fx-padding: 24;
+}

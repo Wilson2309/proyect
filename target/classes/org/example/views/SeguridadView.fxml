@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+
+<ScrollPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:id="rootPane"
+            fx:controller="org.example.controllers.SeguridadController"
+            fitToWidth="true"
+            hbarPolicy="NEVER"
+            styleClass="security-root"
+            stylesheets="@/org/example/styles/seguridad.css">
+
+    <VBox fx:id="contentRoot" spacing="22" styleClass="security-content">
+        <padding>
+            <Insets bottom="10" left="4" right="10" top="4"/>
+        </padding>
+
+        <HBox alignment="CENTER_LEFT" spacing="16" styleClass="security-header">
+            <VBox spacing="4">
+                <Label text="Seguridad" styleClass="security-title"/>
+                <Label text="Analisis inteligente de riesgos, procesos y superficie de ataque" styleClass="security-subtitle"/>
+            </VBox>
+            <Region HBox.hgrow="ALWAYS"/>
+            <VBox alignment="CENTER_RIGHT" spacing="4" styleClass="security-chip">
+                <Label text="Monitor visual" styleClass="security-chip-title"/>
+                <Label text="Preparado para SQLite" styleClass="security-chip-subtitle"/>
+            </VBox>
+        </HBox>
+
+        <HBox spacing="16" styleClass="hero-layout">
+            <VBox fx:id="securityStateCard" spacing="16" styleClass="security-state-card state-attention" HBox.hgrow="ALWAYS">
+                <HBox alignment="CENTER_LEFT" spacing="14">
+                    <StackPane styleClass="state-icon-box">
+                        <Label fx:id="stateIconLabel" text="!" styleClass="state-icon-label"/>
+                    </StackPane>
+                    <VBox spacing="3">
+                        <Label text="Estado general" styleClass="section-kicker"/>
+                        <Label fx:id="stateLabel" text="Atencion" styleClass="state-title"/>
+                    </VBox>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <VBox alignment="CENTER_RIGHT" spacing="4">
+                        <Label fx:id="scoreLabel" text="0/100" styleClass="score-label"/>
+                        <Label fx:id="quickMetaLabel" text="Sin analisis reciente" styleClass="score-meta"/>
+                    </VBox>
+                </HBox>
+                <Label fx:id="stateSummaryLabel" text="Ejecute un analisis para calcular el estado real de seguridad." wrapText="true" styleClass="state-summary"/>
+                <ProgressBar fx:id="scoreProgress" progress="0" styleClass="score-progress"/>
+            </VBox>
+
+            <VBox spacing="12" styleClass="scan-card">
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <ProgressIndicator fx:id="scanProgress" visible="false" managed="false" prefHeight="30" prefWidth="30" styleClass="scan-progress"/>
+                    <VBox spacing="2">
+                        <Label text="Centro de analisis" styleClass="section-title"/>
+                        <Label fx:id="scanStatusLabel" text="Listo para analizar." styleClass="scan-status"/>
+                    </VBox>
+                </HBox>
+
+                <Button fx:id="quickScanButton" text="Escaneo rapido" onAction="#handleQuickScan" onMouseEntered="#handleActionHover" onMouseExited="#handleActionExit" maxWidth="Infinity" styleClass="scan-button primary-scan-button">
+                    <graphic>
+                        <SVGPath content="M21 21l-5-5 M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0z" styleClass="button-svg"/>
+                    </graphic>
+                </Button>
+                <Button fx:id="deepScanButton" text="Analisis profundo" onAction="#handleDeepScan" onMouseEntered="#handleActionHover" onMouseExited="#handleActionExit" maxWidth="Infinity" styleClass="scan-button secondary-scan-button">
+                    <graphic>
+                        <SVGPath content="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" styleClass="button-svg"/>
+                    </graphic>
+                </Button>
+                <ProgressBar fx:id="deepProgressBar" visible="false" managed="false" progress="0" styleClass="deep-progress"/>
+            </VBox>
+        </HBox>
+
+        <FlowPane fx:id="metricsFlow" hgap="14" vgap="14" styleClass="metrics-flow">
+            <VBox prefWidth="164" spacing="8" styleClass="metric-card">
+                <Label text="Amenazas" styleClass="metric-label"/>
+                <Label fx:id="threatsMetricLabel" text="0" styleClass="metric-value"/>
+                <Label text="Detectadas" styleClass="metric-caption"/>
+            </VBox>
+            <VBox prefWidth="164" spacing="8" styleClass="metric-card">
+                <Label text="Riesgo" styleClass="metric-label"/>
+                <Label fx:id="riskMetricLabel" text="Bajo" styleClass="metric-value"/>
+                <Label text="Nivel actual" styleClass="metric-caption"/>
+            </VBox>
+            <VBox prefWidth="164" spacing="8" styleClass="metric-card">
+                <Label text="Programas" styleClass="metric-label"/>
+                <Label fx:id="programsMetricLabel" text="0" styleClass="metric-value"/>
+                <Label text="Analizados" styleClass="metric-caption"/>
+            </VBox>
+            <VBox prefWidth="164" spacing="8" styleClass="metric-card">
+                <Label text="Firewall" styleClass="metric-label"/>
+                <Label fx:id="systemMetricLabel" text="No verificado" styleClass="metric-value small-metric-value"/>
+                <Label text="Estado sistema" styleClass="metric-caption"/>
+            </VBox>
+            <VBox prefWidth="164" spacing="8" styleClass="metric-card">
+                <Label text="Ultimo analisis" styleClass="metric-label"/>
+                <Label fx:id="lastScanMetricLabel" text="Pendiente" styleClass="metric-value small-metric-value"/>
+                <Label text="Registro local" styleClass="metric-caption"/>
+            </VBox>
+        </FlowPane>
+
+        <FlowPane hgap="16" vgap="16" styleClass="main-grid">
+            <VBox prefWidth="520" spacing="12" styleClass="panel-card threats-panel">
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label text="Amenazas detectadas" styleClass="section-title"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label text="Riesgo priorizado" styleClass="mini-badge"/>
+                </HBox>
+                <VBox fx:id="threatsList" spacing="10"/>
+            </VBox>
+
+            <VBox prefWidth="330" spacing="16" styleClass="side-column">
+                <VBox spacing="12" styleClass="panel-card side-panel">
+                    <Label text="Recomendaciones inteligentes" styleClass="section-title"/>
+                    <VBox fx:id="recommendationsList" spacing="10"/>
+                </VBox>
+
+                <VBox spacing="12" styleClass="panel-card side-panel">
+                    <Label text="Actividad reciente" styleClass="section-title"/>
+                    <VBox fx:id="activityList" spacing="10"/>
+                </VBox>
+            </VBox>
+        </FlowPane>
+    </VBox>
+</ScrollPane>

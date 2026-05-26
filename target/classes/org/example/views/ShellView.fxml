@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.shape.SVGPath?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:id="shellRoot"
+            fx:controller="org.example.controllers.ShellController"
+            prefHeight="720.0"
+            prefWidth="1080.0"
+            styleClass="shell-root"
+            stylesheets="@/org/example/styles/shell.css">
+
+    <padding>
+        <Insets top="24.0" bottom="24.0" left="24.0" right="24.0"/>
+    </padding>
+
+    <!-- FLOATING SIDEBAR -->
+    <left>
+        <VBox fx:id="sidebar" styleClass="sidebar-card">
+            
+            <!-- BRANDING -->
+            <HBox styleClass="brand-container">
+                <StackPane styleClass="brand-icon-bg">
+                    <!-- Icono Escudo/Check moderno -->
+                    <SVGPath content="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" styleClass="brand-icon" strokeWidth="2" stroke="white" fill="TRANSPARENT"/>
+                    <SVGPath content="M9 12l2 2 4-4" strokeWidth="2.5" stroke="white" fill="TRANSPARENT" strokeLineCap="round" strokeLineJoin="round"/>
+                </StackPane>
+                <VBox styleClass="brand-text-box">
+                    <Label text="OptiScan Pro" styleClass="brand-title"/>
+                    <Label text="Desktop Optimizer" styleClass="brand-subtitle"/>
+                </VBox>
+            </HBox>
+
+            <!-- MAIN MENU -->
+            <Label text="MAIN" styleClass="section-label"/>
+            
+            <Button fx:id="dashboardButton" text="Dashboard" maxWidth="Infinity" onAction="#goToDashboard" styleClass="nav-button">
+                <graphic>
+                    <SVGPath content="M3 3h7v7H3z M14 3h7v7h-7z M14 14h7v7h-7z M3 14h7v7H3z" styleClass="nav-icon"/>
+                </graphic>
+            </Button>
+            
+            <Button fx:id="programasButton" text="Programas" maxWidth="Infinity" onAction="#goToProgramas" styleClass="nav-button">
+                <graphic>
+                    <SVGPath content="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" styleClass="nav-icon"/>
+                </graphic>
+            </Button>
+
+            <StackPane styleClass="sidebar-separator"><Region styleClass="line"/></StackPane>
+
+            <!-- TOOLS -->
+            <Label text="TOOLS" styleClass="section-label"/>
+            
+            <Button fx:id="seguridadButton" text="Seguridad" maxWidth="Infinity" onAction="#goToSeguridad" styleClass="nav-button">
+                <graphic>
+                    <SVGPath content="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" styleClass="nav-icon"/>
+                </graphic>
+            </Button>
+            
+            <Button fx:id="limpiezaButton" text="Limpieza" maxWidth="Infinity" onAction="#goToLimpieza" styleClass="nav-button">
+                <graphic>
+                    <SVGPath content="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" styleClass="nav-icon"/>
+                </graphic>
+            </Button>
+
+            <StackPane styleClass="sidebar-separator"><Region styleClass="line"/></StackPane>
+
+            <!-- USER -->
+            <Label text="USER" styleClass="section-label"/>
+            
+            <Button fx:id="historialButton" text="Historial" maxWidth="Infinity" onAction="#goToHistorial" styleClass="nav-button">
+                <graphic>
+                    <SVGPath content="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" styleClass="nav-icon"/>
+                </graphic>
+            </Button>
+            
+            <Button fx:id="perfilButton" text="Perfil" maxWidth="Infinity" onAction="#goToPerfil" styleClass="nav-button">
+                <graphic>
+                    <SVGPath content="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z" styleClass="nav-icon"/>
+                </graphic>
+            </Button>
+
+            <!-- SPACER to push the bottom elements down -->
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <!-- CONFIGURACIÓN -->
+            <Button fx:id="configuracionButton" text="Configuración" maxWidth="Infinity" onAction="#goToConfiguracion" styleClass="nav-button">
+                <graphic>
+                    <SVGPath content="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z" styleClass="nav-icon"/>
+                </graphic>
+            </Button>
+
+            <!-- LOGOUT -->
+            <Button fx:id="logoutButton" text="Cerrar sesión" maxWidth="Infinity" onAction="#handleLogout" styleClass="logout-button">
+                <graphic>
+                    <SVGPath content="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9" styleClass="logout-icon"/>
+                </graphic>
+            </Button>
+            <Label text="v2.0.1" styleClass="version-label"/>
+
+        </VBox>
+    </left>
+
+    <!-- CONTENT AREA -->
+    <center>
+        <StackPane fx:id="contentArea" styleClass="content-card">
+            <BorderPane.margin>
+                <Insets left="20.0"/>
+            </BorderPane.margin>
+            <padding>
+                <Insets top="4.0" bottom="4.0" left="4.0" right="4.0"/>
+            </padding>
+            <Label fx:id="mainContentLabel" text="Contenido principal" styleClass="content-placeholder"/>
+        </StackPane>
+    </center>
+
+</BorderPane>

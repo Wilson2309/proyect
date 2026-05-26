@@ -1,0 +1,235 @@
+/* ============================================================
+   OptiScan Pro — Perfil Premium SaaS Design
+   ============================================================ */
+
+.profile-root {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+/* ── Headers & Typography ───────────────────────────────── */
+.profile-title {
+    -fx-font-family: "Segoe UI Variable Display", "Segoe UI", sans-serif;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111827;
+}
+
+.section-title {
+    -fx-font-family: "Segoe UI Variable", "Segoe UI", sans-serif;
+    -fx-font-size: 16px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #374151;
+}
+
+/* ── Cards ──────────────────────────────────────────────── */
+.premium-card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-border-color: rgba(0, 0, 0, 0.04);
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.04), 20, 0, 0, 3);
+    -fx-padding: 24px;
+}
+
+/* ── Top Header Card (Avatar & Name) ────────────────────── */
+.avatar-bg {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #6366f1, #818cf8);
+    -fx-background-radius: 100px;
+    -fx-min-width: 80px;
+    -fx-min-height: 80px;
+    -fx-max-width: 80px;
+    -fx-max-height: 80px;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(gaussian, rgba(99, 102, 241, 0.35), 15, 0, 0, 5);
+}
+
+.avatar-initial {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Segoe UI Variable Display", "Segoe UI", sans-serif;
+}
+
+.user-name-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #111827;
+}
+
+.user-email-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #6b7280;
+}
+
+.edit-btn {
+    -fx-background-color: #eef2ff;
+    -fx-text-fill: #4f46e5;
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+    -fx-padding: 8px 16px;
+    -fx-background-radius: 12px;
+    -fx-cursor: hand;
+}
+.edit-btn:hover {
+    -fx-background-color: #e0e7ff;
+}
+
+/* ── Stats Cards ────────────────────────────────────────── */
+.stat-card {
+    -fx-background-color: #f9fafb;
+    -fx-background-radius: 16px;
+    -fx-padding: 16px;
+    -fx-spacing: 12px;
+    -fx-alignment: center-left;
+}
+
+.stat-icon-wrapper {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 12px;
+    -fx-padding: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.03), 8, 0, 0, 1);
+}
+
+.stat-icon {
+    -fx-fill: transparent;
+    -fx-stroke: #6366f1;
+    -fx-stroke-width: 2px;
+    -fx-stroke-line-cap: round;
+    -fx-stroke-line-join: round;
+}
+
+.stat-value {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111827;
+}
+
+.stat-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #6b7280;
+    -fx-font-weight: 500;
+}
+
+/* ── Info Items ─────────────────────────────────────────── */
+.info-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #9ca3af;
+    -fx-font-weight: 600;
+}
+
+.info-value {
+    -fx-font-size: 14px;
+    -fx-text-fill: #374151;
+    -fx-font-weight: 500;
+}
+
+.status-badge {
+    -fx-background-color: #ecfdf5;
+    -fx-text-fill: #059669;
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+    -fx-padding: 4px 10px;
+    -fx-background-radius: 10px;
+}
+
+/* ── Recent Activity ────────────────────────────────────── */
+.activity-list {
+    -fx-spacing: 12px;
+}
+
+.activity-item {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #f3f4f6;
+    -fx-border-width: 1px;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-padding: 12px 16px;
+    -fx-spacing: 16px;
+    -fx-alignment: center-left;
+}
+
+.activity-item:hover {
+    -fx-background-color: #f9fafb;
+}
+
+.activity-icon {
+    -fx-font-size: 16px;
+    -fx-min-width: 36px;
+    -fx-min-height: 36px;
+    -fx-background-color: #f3f4f6;
+    -fx-background-radius: 10px;
+    -fx-alignment: center;
+}
+
+.activity-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #374151;
+}
+
+.activity-desc {
+    -fx-font-size: 13px;
+    -fx-text-fill: #6b7280;
+}
+
+.activity-time {
+    -fx-font-size: 12px;
+    -fx-text-fill: #9ca3af;
+}
+
+/* ── Export Section ─────────────────────────────────────── */
+.export-card {
+    -fx-background-color: #f9fafb;
+    -fx-background-radius: 16px;
+    -fx-padding: 20px;
+    -fx-border-color: #f3f4f6;
+    -fx-border-width: 1px;
+    -fx-border-radius: 16px;
+}
+
+.export-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #111827;
+}
+
+.export-desc {
+    -fx-font-size: 13px;
+    -fx-text-fill: #6b7280;
+    -fx-pref-height: 40px;
+}
+
+.export-btn {
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+    -fx-padding: 6px 12px;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+}
+
+.pdf-btn {
+    -fx-background-color: #fee2e2;
+    -fx-text-fill: #dc2626;
+}
+.pdf-btn:hover {
+    -fx-background-color: #fecaca;
+}
+
+.csv-btn {
+    -fx-background-color: #dcfce7;
+    -fx-text-fill: #16a34a;
+}
+.csv-btn:hover {
+    -fx-background-color: #bbf7d0;
+}
+
+.txt-btn {
+    -fx-background-color: #e0f2fe;
+    -fx-text-fill: #0284c7;
+}
+.txt-btn:hover {
+    -fx-background-color: #bae6fd;
+}
+

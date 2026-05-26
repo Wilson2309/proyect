@@ -1,0 +1,289 @@
+/* ============================================================
+   OptiScan Pro — Dark Theme CSS
+   ============================================================ */
+
+.shell-root {
+    -fx-background-color: #0f111a;
+}
+
+.sidebar-card {
+    -fx-background-color: #1a1d27;
+    -fx-border-color: rgba(255, 255, 255, 0.05);
+}
+
+.brand-title {
+    -fx-text-fill: #f3f4f6;
+}
+
+.brand-subtitle {
+    -fx-text-fill: #9ca3af;
+}
+
+.nav-button {
+    -fx-text-fill: #9ca3af;
+}
+
+.nav-button:hover {
+    -fx-background-color: #232736;
+    -fx-text-fill: #e5e7eb;
+}
+
+.nav-button:pressed {
+    -fx-background-color: #2a2f42;
+    -fx-text-fill: #e5e7eb;
+}
+
+.nav-button.active {
+    -fx-background-color: rgba(99, 102, 241, 0.15);
+    -fx-text-fill: #818cf8;
+}
+
+.sidebar-separator > .line {
+    -fx-border-color: #232736;
+}
+
+.content-card {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-effect: null;
+}
+
+.premium-card {
+    -fx-background-color: #1a1d27;
+    -fx-border-color: rgba(255, 255, 255, 0.05);
+}
+
+.config-title, .profile-title, .user-name-title, .stat-value {
+    -fx-text-fill: #f9fafb;
+}
+
+.section-title {
+    -fx-text-fill: #e5e7eb;
+}
+
+.info-value, .stat-card, .saas-combo-box {
+    -fx-background-color: #232736;
+    -fx-text-fill: #e5e7eb;
+    -fx-border-color: rgba(255, 255, 255, 0.05);
+}
+
+.config-root,
+.config-root > .viewport {
+    -fx-background-color: transparent;
+}
+
+.config-title,
+.summary-value,
+.setting-title {
+    -fx-text-fill: #f9fafb;
+}
+
+.config-subtitle,
+.section-subtitle,
+.summary-label,
+.setting-description,
+.status-label {
+    -fx-text-fill: #9ca3af;
+}
+
+.summary-card,
+.settings-card,
+.system-card,
+.status-chip {
+    -fx-background-color: #1a1d27;
+    -fx-border-color: rgba(255, 255, 255, 0.06);
+}
+
+.setting-row,
+.info-value {
+    -fx-background-color: #232736;
+    -fx-border-color: rgba(255, 255, 255, 0.06);
+}
+
+.secondary-button {
+    -fx-background-color: #232736;
+    -fx-text-fill: #e5e7eb;
+    -fx-border-color: rgba(255, 255, 255, 0.08);
+}
+
+.security-root,
+.security-root > .viewport {
+    -fx-background-color: transparent;
+}
+
+.security-title,
+.state-title,
+.score-label,
+.section-title,
+.metric-value,
+.threat-title,
+.activity-title,
+.security-chip-title {
+    -fx-text-fill: #f9fafb;
+}
+
+.security-subtitle,
+.security-chip-subtitle,
+.score-meta,
+.scan-status,
+.metric-caption,
+.state-summary,
+.threat-description,
+.activity-desc,
+.recommendation-text,
+.threat-date,
+.activity-time {
+    -fx-text-fill: #9ca3af;
+}
+
+.security-chip,
+.security-state-card,
+.scan-card,
+.metric-card,
+.panel-card {
+    -fx-background-color: #1a1d27;
+    -fx-border-color: rgba(255, 255, 255, 0.06);
+}
+
+.state-safe {
+    -fx-background-color: #14251d;
+    -fx-border-color: rgba(34, 197, 94, 0.35);
+}
+
+.state-attention {
+    -fx-background-color: #292313;
+    -fx-border-color: rgba(245, 158, 11, 0.35);
+}
+
+.state-risk {
+    -fx-background-color: #2a1719;
+    -fx-border-color: rgba(239, 68, 68, 0.35);
+}
+
+.metric-card,
+.threat-row,
+.recommendation-item,
+.security-activity-item,
+.secondary-scan-button {
+    -fx-background-color: #232736;
+    -fx-border-color: rgba(255, 255, 255, 0.06);
+}
+
+.secondary-scan-button {
+    -fx-text-fill: #e5e7eb;
+}
+
+.secondary-scan-button .button-svg {
+    -fx-stroke: #e5e7eb;
+}
+
+.threat-recommendation {
+    -fx-text-fill: #d1d5db;
+}
+
+.clean-root,
+.clean-root > .viewport {
+    -fx-background-color: transparent;
+}
+
+.clean-title,
+.clean-chip-title,
+.state-title,
+.score-label,
+.recoverable-value,
+.section-title,
+.metric-value,
+.item-title,
+.program-title,
+.activity-title,
+.category-title,
+.category-value {
+    -fx-text-fill: #f9fafb;
+}
+
+.clean-subtitle,
+.clean-chip-subtitle,
+.score-meta,
+.state-summary,
+.action-status,
+.metric-caption,
+.helper-text,
+.item-path,
+.program-publisher,
+.activity-desc,
+.recommendation-text,
+.item-date,
+.activity-time {
+    -fx-text-fill: #9ca3af;
+}
+
+.clean-chip,
+.clean-state-card,
+.action-card,
+.metric-card,
+.panel-card {
+    -fx-background-color: #1a1d27;
+    -fx-border-color: rgba(255, 255, 255, 0.06);
+}
+
+.state-optimal {
+    -fx-background-color: #14251d;
+    -fx-border-color: rgba(34, 197, 94, 0.35);
+}
+
+.state-recommended {
+    -fx-background-color: #292313;
+    -fx-border-color: rgba(245, 158, 11, 0.35);
+}
+
+.state-saturated {
+    -fx-background-color: #2a1719;
+    -fx-border-color: rgba(239, 68, 68, 0.35);
+}
+
+.cleaning-row,
+.recommendation-item,
+.program-review-row,
+.activity-item,
+.secondary-action {
+    -fx-background-color: #232736;
+    -fx-border-color: rgba(255, 255, 255, 0.06);
+}
+
+.secondary-action {
+    -fx-text-fill: #e5e7eb;
+}
+
+.item-size,
+.program-size {
+    -fx-text-fill: #d1d5db;
+}
+
+.saas-toggle {
+    -fx-text-fill: #d1d5db;
+}
+
+.saas-toggle .box {
+    -fx-background-color: #374151;
+}
+
+.stat-icon-wrapper, .activity-icon {
+    -fx-background-color: #2d3243;
+}
+
+.activity-item {
+    -fx-background-color: #1a1d27;
+    -fx-border-color: rgba(255, 255, 255, 0.05);
+}
+
+.activity-item:hover {
+    -fx-background-color: #232736;
+}
+
+.activity-title {
+    -fx-text-fill: #e5e7eb;
+}
+
+.activity-desc, .activity-time {
+    -fx-text-fill: #9ca3af;
+}

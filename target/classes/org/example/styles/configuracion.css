@@ -1,0 +1,288 @@
+/* OptiScan Pro - Configuracion */
+
+.config-root {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-font-family: "Segoe UI Variable", "Segoe UI", sans-serif;
+}
+
+.config-root > .viewport {
+    -fx-background-color: transparent;
+}
+
+.config-root .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 10;
+}
+
+.config-root .thumb {
+    -fx-background-color: #cbd5e1;
+    -fx-background-radius: 12;
+}
+
+.config-content {
+    -fx-background-color: transparent;
+}
+
+.config-title {
+    -fx-text-fill: #0f172a;
+    -fx-font-size: 28px;
+    -fx-font-weight: 900;
+}
+
+.config-subtitle,
+.section-subtitle,
+.status-chip-subtitle,
+.setting-description {
+    -fx-text-fill: #64748b;
+    -fx-font-size: 12.5px;
+}
+
+.status-chip {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 14;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 14;
+    -fx-padding: 10 14 10 14;
+}
+
+.status-chip-title {
+    -fx-text-fill: #0f172a;
+    -fx-font-size: 12.5px;
+    -fx-font-weight: 900;
+}
+
+.summary-flow,
+.settings-flow {
+    -fx-alignment: top-left;
+}
+
+.summary-card,
+.settings-card,
+.system-card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 18;
+    -fx-border-color: #e5e7eb;
+    -fx-border-radius: 18;
+    -fx-padding: 18;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.06), 18, 0, 0, 4);
+}
+
+.summary-card {
+    -fx-min-height: 88;
+}
+
+.summary-label,
+.info-label {
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 11px;
+    -fx-font-weight: 900;
+}
+
+.summary-value {
+    -fx-text-fill: #0f172a;
+    -fx-font-size: 14px;
+    -fx-font-weight: 850;
+}
+
+.section-title {
+    -fx-text-fill: #0f172a;
+    -fx-font-size: 16px;
+    -fx-font-weight: 900;
+}
+
+.section-icon {
+    -fx-min-width: 42;
+    -fx-min-height: 42;
+    -fx-max-width: 42;
+    -fx-max-height: 42;
+    -fx-background-radius: 13;
+    -fx-alignment: center;
+}
+
+.icon-blue {
+    -fx-background-color: #eef2ff;
+}
+
+.icon-green {
+    -fx-background-color: #ecfdf5;
+}
+
+.icon-purple {
+    -fx-background-color: #f5f3ff;
+}
+
+.icon-dark {
+    -fx-background-color: #f1f5f9;
+}
+
+.section-svg {
+    -fx-fill: transparent;
+    -fx-stroke: #2563eb;
+    -fx-stroke-width: 1.8;
+    -fx-stroke-line-cap: round;
+    -fx-stroke-line-join: round;
+}
+
+.icon-green .section-svg {
+    -fx-stroke: #059669;
+}
+
+.icon-purple .section-svg {
+    -fx-stroke: #7c3aed;
+}
+
+.icon-dark .section-svg {
+    -fx-stroke: #334155;
+}
+
+.saas-toggle {
+    -fx-text-fill: #334155;
+    -fx-font-size: 13.5px;
+    -fx-font-weight: 700;
+    -fx-graphic-text-gap: 14;
+    -fx-cursor: hand;
+}
+
+.saas-toggle .box {
+    -fx-background-color: #e2e8f0;
+    -fx-background-radius: 20;
+    -fx-border-color: transparent;
+    -fx-border-radius: 20;
+    -fx-min-width: 44;
+    -fx-min-height: 24;
+    -fx-max-width: 44;
+    -fx-max-height: 24;
+}
+
+.saas-toggle:selected .box {
+    -fx-background-color: #2563eb;
+}
+
+.saas-toggle .mark {
+    -fx-shape: null;
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 50%;
+    -fx-min-width: 18;
+    -fx-min-height: 18;
+    -fx-max-width: 18;
+    -fx-max-height: 18;
+    -fx-translate-x: -8;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.25), 4, 0, 0, 1);
+}
+
+.saas-toggle:selected .mark {
+    -fx-translate-x: 10;
+}
+
+.setting-row {
+    -fx-background-color: #f8fafc;
+    -fx-background-radius: 14;
+    -fx-border-color: #e5e7eb;
+    -fx-border-radius: 14;
+    -fx-padding: 12;
+}
+
+.setting-title {
+    -fx-text-fill: #0f172a;
+    -fx-font-size: 13px;
+    -fx-font-weight: 850;
+}
+
+.saas-combo-box {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #dbe3ee;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 4 8 4 8;
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+}
+
+.primary-button,
+.secondary-button,
+.danger-button {
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 10 14 10 14;
+    -fx-font-size: 13px;
+    -fx-font-weight: 900;
+    -fx-cursor: hand;
+}
+
+.primary-button {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: #ffffff;
+}
+
+.primary-button:hover {
+    -fx-background-color: #1d4ed8;
+}
+
+.secondary-button {
+    -fx-background-color: #f8fafc;
+    -fx-text-fill: #334155;
+    -fx-border-color: #e2e8f0;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #f1f5f9;
+}
+
+.danger-button {
+    -fx-background-color: #fef2f2;
+    -fx-text-fill: #b91c1c;
+    -fx-border-color: #fecaca;
+}
+
+.danger-button:hover {
+    -fx-background-color: #fee2e2;
+}
+
+.scan-progress {
+    -fx-progress-color: #2563eb;
+}
+
+.status-label {
+    -fx-text-fill: #475569;
+    -fx-font-size: 12.5px;
+    -fx-font-weight: 650;
+}
+
+.system-card {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #ffffff, #f8fbff);
+}
+
+.mini-badge {
+    -fx-background-color: #eff6ff;
+    -fx-text-fill: #1d4ed8;
+    -fx-background-radius: 999;
+    -fx-border-color: #bfdbfe;
+    -fx-border-radius: 999;
+    -fx-padding: 5 10 5 10;
+    -fx-font-size: 11px;
+    -fx-font-weight: 900;
+}
+
+.info-value {
+    -fx-text-fill: #334155;
+    -fx-background-color: #f8fafc;
+    -fx-background-radius: 12;
+    -fx-border-color: #e5e7eb;
+    -fx-border-radius: 12;
+    -fx-padding: 10 12 10 12;
+    -fx-font-size: 13px;
+    -fx-font-weight: 650;
+}
+
+.compact-mode .settings-card,
+.compact-mode .summary-card,
+.compact-mode .system-card {
+    -fx-padding: 14;
+}
+
+.spacious-mode .settings-card,
+.spacious-mode .summary-card,
+.spacious-mode .system-card {
+    -fx-padding: 24;
+}

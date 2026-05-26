@@ -1,0 +1,125 @@
+/* Auth screens — OptiScan Pro */
+
+.auth-root {
+    -fx-background-color: linear-gradient(to bottom right, #0f172a, #1e293b, #334155);
+}
+
+.auth-card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 16px;
+    -fx-padding: 36 40 36 40;
+    -fx-spacing: 14;
+    -fx-max-width: 400;
+    -fx-min-width: 360;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.25), 24, 0, 0, 8);
+}
+
+.auth-title {
+    -fx-text-fill: #0f172a;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+
+.auth-subtitle {
+    -fx-text-fill: #64748b;
+    -fx-font-size: 14px;
+    -fx-padding: 0 0 8 0;
+}
+
+.auth-field-label {
+    -fx-text-fill: #334155;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.auth-textfield,
+.auth-passwordfield {
+    -fx-background-color: #f8fafc;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 10 12 10 12;
+    -fx-font-size: 14px;
+    -fx-prompt-text-fill: #94a3b8;
+}
+
+.auth-textfield:focused,
+.auth-passwordfield:focused {
+    -fx-border-color: #3b82f6;
+    -fx-background-color: #ffffff;
+}
+
+.auth-primary-button {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8px;
+    -fx-padding: 12 16 12 16;
+    -fx-cursor: hand;
+    -fx-margin: 8 0 0 0;
+}
+
+.auth-primary-button:hover {
+    -fx-background-color: #1d4ed8;
+}
+
+.auth-primary-button:pressed {
+    -fx-background-color: #1e40af;
+}
+
+.auth-secondary-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #2563eb;
+    -fx-font-size: 13px;
+    -fx-underline: true;
+    -fx-cursor: hand;
+    -fx-padding: 8 0 0 0;
+}
+
+.auth-secondary-button:hover {
+    -fx-text-fill: #1d4ed8;
+}
+
+.auth-footer {
+    -fx-spacing: 4;
+    -fx-alignment: center;
+    -fx-padding: 12 0 0 0;
+}
+
+.auth-footer-text {
+    -fx-text-fill: #64748b;
+    -fx-font-size: 13px;
+}
+
+.auth-message {
+    -fx-font-size: 13px;
+    -fx-padding: 8 10 8 10;
+    -fx-background-radius: 8px;
+    -fx-wrap-text: true;
+    -fx-max-width: Infinity;
+}
+
+.auth-message-error {
+    -fx-text-fill: #b91c1c;
+    -fx-background-color: #fef2f2;
+    -fx-border-color: #fecaca;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-border-width: 1;
+}
+
+.auth-message-success {
+    -fx-text-fill: #15803d;
+    -fx-background-color: #f0fdf4;
+    -fx-border-color: #bbf7d0;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-border-width: 1;
+}
+
+.auth-field-error {
+    -fx-border-color: #ef4444;
+    -fx-border-width: 2;
+    -fx-background-color: #fff5f5;
+}
